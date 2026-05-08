@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>BOV — Del Rex Anne-Lene Apartments | 1750 S Easy Way, Anaheim, CA 92804</title>
-<meta name="description" content="Broker Opinion of Value for Del Rex Anne-Lene Apartments — 24-Unit Multifamily, 1750 S Easy Way, Anaheim, CA 92804. Prepared by the LAAA Team at Marcus & Millichap." />
+<title>BOV — Del Rey Apartments | 1750 S Easy Way, Anaheim, CA 92804</title>
+<meta name="description" content="Broker Opinion of Value for Del Rey Apartments — 24-Unit Multifamily, 1750 S Easy Way, Anaheim, CA 92804. Prepared by the LAAA Team at Marcus & Millichap." />
 <meta property="og:title" content="BOV — 1750 S Easy Way, Anaheim, CA 92804" />
 <meta property="og:description" content="24-Unit Value-Add Multifamily Investment | LAAA Team — Marcus & Millichap" />
 <meta property="og:url" content="https://1750easyway.laaa.com/" />
@@ -78,7 +78,10 @@
 
   /* COVER */
   .cover {
-    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+    background:
+      linear-gradient(135deg, rgba(27,58,92,0.88) 0%, rgba(18,40,71,0.78) 60%, rgba(18,40,71,0.94) 100%),
+      url('images/hero.jpg') center/cover no-repeat,
+      linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
     color: var(--white);
     min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
     padding: 80px 24px;
@@ -86,7 +89,12 @@
   }
   .cover::before {
     content: ""; position: absolute; top: 0; right: 0; width: 50%; height: 100%;
-    background: radial-gradient(circle at 80% 50%, rgba(197, 162, 88, 0.12), transparent 60%);
+    background: radial-gradient(circle at 80% 50%, rgba(197, 162, 88, 0.18), transparent 60%);
+    pointer-events: none;
+  }
+  .cover::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(18,40,71,0.5) 100%);
     pointer-events: none;
   }
   .cover-inner {
@@ -145,6 +153,15 @@
     text-align: right;
   }
   @media (max-width: 720px) { .cover-tagline { text-align: left; } }
+
+  /* HERO BUILDING SHOWCASE (in property section) */
+  .building-showcase {
+    margin-bottom: 32px; border-radius: 4px; overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    aspect-ratio: 16/8; background: var(--bg);
+    background-image: url('images/hero.jpg');
+    background-size: cover; background-position: center;
+  }
 
   /* PROPERTY SUMMARY */
   .summary-grid {
@@ -284,7 +301,7 @@
   }
 
   /* MAP */
-  #map { height: 480px; border-radius: 4px; border: 1px solid var(--border); }
+  .leaflet-map { height: 460px; border-radius: 4px; border: 1px solid var(--border); margin-top: 16px; }
 
   /* FOOTER / TEAM */
   footer.team-footer {
@@ -416,7 +433,7 @@
 <section class="cover" id="cover">
   <div class="cover-inner">
     <div class="cover-eyebrow">Broker Opinion of Value · May 2026</div>
-    <h1>Del Rex Anne-Lene<br /><span class="gold">Apartment Homes</span></h1>
+    <h1>Del Rey<br /><span class="gold">Apartments</span></h1>
     <div class="subline">1750 S Easy Way · Anaheim, CA 92804 · 24-Unit Multifamily</div>
 
     <div class="specs-row">
@@ -448,8 +465,10 @@
     <div class="section-title">A 24-Unit Value-Add Multifamily Asset in West Anaheim</div>
     <div class="section-divider"></div>
 
+    <div class="building-showcase"></div>
+
     <p class="section-subtitle">
-      Del Rex Anne-Lene Apartment Homes is a 24-unit, four-building garden-style multifamily community
+      Del Rey Apartments is a 24-unit, four-building garden-style multifamily community
       situated on a one-acre RM-4 zoned lot in the South Anaheim submarket. Built in 1977 and held by long-term
       ownership, the asset offers a new investor the largest in-place rent upside in the local comp set —
       approximately 38% loss-to-lease — supported by a stable workforce-rental neighborhood, no local rent control,
@@ -625,7 +644,7 @@
         <h3 style="font-family: 'Playfair Display', serif; color: var(--navy); font-size: 22px; margin-bottom: 16px;">Building &amp; Site</h3>
         <table class="info-table">
           <tr><td>Address</td><td>1750 S Easy Way, Anaheim, CA 92804</td></tr>
-          <tr><td>Property Name</td><td>Del Rex Anne-Lene Apartment Homes</td></tr>
+          <tr><td>Property Name</td><td>Del Rey Apartments</td></tr>
           <tr><td>APN</td><td>128-552-23</td></tr>
           <tr><td>Submarket</td><td>South Anaheim · West Anaheim corridor</td></tr>
           <tr><td>Year Built</td><td>1977</td></tr>
@@ -694,6 +713,58 @@
       <p style="font-size: 12px; color: var(--muted); margin-top: 12px; font-style: italic;">
         Unit mix and SF allocations are assumed based on building gross area and submarket vintage; subject to
         confirmation by seller-provided rent roll. In-place average rent reflects ownership intel.
+      </p>
+    </div>
+
+    <h3 style="font-family: 'Playfair Display', serif; color: var(--navy); font-size: 22px; margin: 48px 0 16px;">Mix Sensitivity — Pro-Forma Upside Range</h3>
+    <p style="font-size: 14px; color: var(--muted); margin-bottom: 20px; max-width: 760px;">
+      Until the seller-provided rent roll confirms unit mix, two scenarios bracket the pro-forma upside.
+      Both stay inside the gross building area (24,455 SF) within 0.2% tolerance and use the same validated
+      market rents from the W Sumac Lane / S Nutwood Street rent comp set.
+    </p>
+    <div class="data-table-wrap">
+      <table class="data">
+        <thead>
+          <tr>
+            <th>Scenario</th>
+            <th class="center">2BR/2BA</th>
+            <th class="center">1BR/1BA</th>
+            <th class="right">Mix Wtd Rent</th>
+            <th class="right">Market GSR</th>
+            <th class="right">Pro-Forma NOI</th>
+            <th class="right">PF Cap @ $5.8M</th>
+            <th class="right">PF GRM @ $5.8M</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Mix A — Base Case</strong><br/><span style="font-size:12px;color:var(--muted)">2BR @ ~1,100 SF · 1BR @ ~850 SF</span></td>
+            <td class="center">16 (66.7%)</td>
+            <td class="center">8 (33.3%)</td>
+            <td class="right">$2,250</td>
+            <td class="right">$648,000</td>
+            <td class="right">~$370,000</td>
+            <td class="right"><strong>6.37%</strong></td>
+            <td class="right">8.95×</td>
+          </tr>
+          <tr class="subject">
+            <td><strong>Mix B — 2BR Heavy</strong><br/><span style="font-size:12px;color:var(--navy)">2BR @ ~1,050 SF · 1BR @ ~860 SF</span></td>
+            <td class="center"><strong>20 (83.3%)</strong></td>
+            <td class="center"><strong>4 (16.7%)</strong></td>
+            <td class="right"><strong>$2,325</strong></td>
+            <td class="right"><strong>$669,600</strong></td>
+            <td class="right"><strong>~$382,000</strong></td>
+            <td class="right"><strong>6.58%</strong></td>
+            <td class="right"><strong>8.66×</strong></td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size: 12px; color: var(--muted); margin-top: 12px; font-style: italic;">
+        Mix A reflects the conservative working assumption (16 × 2BR + 8 × 1BR). Mix B reflects a more
+        2BR-heavy configuration (20 × 2BR + 4 × 1BR), increasing pro-forma NOI by approximately $12,000/year and
+        compressing the stabilized cap rate at $5.8M from 6.37% to 6.58%. In-place metrics (3.97% cap, $230K NOI)
+        are unchanged across both scenarios because Filip's $1,400/unit average reflects the blended in-place
+        rent regardless of mix.
       </p>
     </div>
   </div>
@@ -903,6 +974,16 @@
         profile, providing a clean value-add narrative for the buyer pool already evaluating the active set.
       </p>
     </div>
+
+    <h3 style="font-family: 'Playfair Display', serif; color: var(--navy); font-size: 22px; margin: 48px 0 0;">Sale &amp; On-Market Comp Map</h3>
+    <p style="font-size: 13px; color: var(--muted); margin-top: 6px;">
+      <span style="display:inline-block;width:10px;height:10px;background:#C5A258;border-radius:50%;vertical-align:middle"></span> Subject
+      &nbsp;·&nbsp;
+      <span style="display:inline-block;width:10px;height:10px;background:#1B3A5C;border-radius:50%;vertical-align:middle"></span> Sold Comps
+      &nbsp;·&nbsp;
+      <span style="display:inline-block;width:10px;height:10px;background:#F57C00;border-radius:50%;vertical-align:middle"></span> Active / Under Contract
+    </p>
+    <div id="sale-map" class="leaflet-map"></div>
   </div>
 </section>
 
@@ -996,6 +1077,14 @@
         Arbors at Magnolia ceiling and above the 2BR/1BA comp set — appropriate for the product class.
       </p>
     </div>
+
+    <h3 style="font-family: 'Playfair Display', serif; color: var(--navy); font-size: 22px; margin: 48px 0 0;">Rent Comp Map</h3>
+    <p style="font-size: 13px; color: var(--muted); margin-top: 6px;">
+      <span style="display:inline-block;width:10px;height:10px;background:#C5A258;border-radius:50%;vertical-align:middle"></span> Subject
+      &nbsp;·&nbsp;
+      <span style="display:inline-block;width:10px;height:10px;background:#2E7D32;border-radius:50%;vertical-align:middle"></span> Rent Comps (¼ mile radius)
+    </p>
+    <div id="rent-map" class="leaflet-map"></div>
   </div>
 </section>
 
@@ -1045,8 +1134,6 @@
       </div>
     </div>
 
-    <h3 style="font-family: 'Playfair Display', serif; color: var(--navy); font-size: 22px; margin: 48px 0 16px;">Subject &amp; Comparable Locations</h3>
-    <div id="map"></div>
   </div>
 </section>
 
@@ -1183,7 +1270,7 @@
 <script>
 (function(){
   // Subject + comp coordinates (approximate from public geocoding)
-  var SUBJECT = [33.8090, -117.9803, "1750 S Easy Way (Subject)", "Del Rex Anne-Lene · 24 Units · 1977"];
+  var SUBJECT = [33.8090, -117.9803, "1750 S Easy Way (Subject)", "Del Rey Apartments · 24 Units · 1977"];
 
   var SALE_COMPS = [
     [33.8222, -118.0096, "1", "3300 W Orange Ave", "$2,725,000 · 9 units · 1976 · 5.05% cap · 01/2026"],
@@ -1200,16 +1287,15 @@
   ];
 
   var RENT_COMPS = [
-    [33.8074, -117.9764, "R1", "1668 S Nutwood St", "1BR/750SF · $1,925"],
-    [33.8085, -117.9826, "R2", "1776 W Sumac Ln (Village)", "Studio-3BR · $1,700-$3,250"],
-    [33.8090, -117.9842, "R3", "1828 W Sumac Ln", "1BR/700SF · $1,650"]
+    [33.8074, -117.9764, "R1", "1668 S Nutwood St (Nutwood Park)", "1BR/1BA · 750 SF · $1,925"],
+    [33.8085, -117.9826, "R2", "1776 W Sumac Ln (Village Apts)", "Studio-3BR · $1,700-$3,250 (full grid)"],
+    [33.8090, -117.9842, "R3", "1828 W Sumac Ln, Unit 1", "1BR/1BA · 700 SF · $1,650"],
+    [33.8091, -117.9844, "R4", "1832 W Sumac Ln, Apt 5", "1BR/1BA · 700 SF · $1,800"],
+    [33.8088, -117.9836, "R5", "1812 W Sumac Ln, Unit 2", "1BR/1BA · $1,630"],
+    [33.8089, -117.9836, "R6", "1818 W Sumac Ln (remodeled)", "2BR/1BA · $2,250"],
+    [33.8087, -117.9831, "R7", "1808 W Sumac Ln, Unit 1", "2BR/1BA w/ garage · $2,095"],
+    [33.8125, -117.9938, "R8", "150 S Magnolia (Arbors)", "2BR · $2,090-$2,900 (1970, 143u)"]
   ];
-
-  var map = L.map('map').setView([SUBJECT[0], SUBJECT[1]], 15);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap contributors',
-    maxZoom: 19
-  }).addTo(map);
 
   function makeIcon(label, bgColor, size) {
     size = size || 28;
@@ -1220,42 +1306,49 @@
     });
   }
 
-  L.marker([SUBJECT[0], SUBJECT[1]], {icon: makeIcon('★', '#C5A258', 34)})
-    .addTo(map)
-    .bindPopup('<strong>' + SUBJECT[2] + '</strong><br>' + SUBJECT[3]);
+  function tile(map) {
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors', maxZoom: 19
+    }).addTo(map);
+  }
 
-  SALE_COMPS.forEach(function(c){
-    L.marker([c[0], c[1]], {icon: makeIcon(c[2], '#1B3A5C', 26)})
-      .addTo(map).bindPopup('<strong>Sale Comp ' + c[2] + ': ' + c[3] + '</strong><br>' + c[4]);
-  });
-  ON_MARKET.forEach(function(c){
-    L.marker([c[0], c[1]], {icon: makeIcon(c[2], '#F57C00', 26)})
-      .addTo(map).bindPopup('<strong>On-Market ' + c[2] + ': ' + c[3] + '</strong><br>' + c[4]);
-  });
-  RENT_COMPS.forEach(function(c){
-    L.marker([c[0], c[1]], {icon: makeIcon(c[2], '#2E7D32', 22)})
-      .addTo(map).bindPopup('<strong>Rent Comp ' + c[2] + ': ' + c[3] + '</strong><br>' + c[4]);
-  });
+  function placeSubject(map) {
+    L.marker([SUBJECT[0], SUBJECT[1]], {icon: makeIcon('★', '#C5A258', 34)})
+      .addTo(map)
+      .bindPopup('<strong>' + SUBJECT[2] + '</strong><br>' + SUBJECT[3]);
+  }
 
-  // Legend
-  var legend = L.control({position: 'bottomleft'});
-  legend.onAdd = function() {
-    var div = L.DomUtil.create('div');
-    div.style.background = '#fff';
-    div.style.padding = '10px 12px';
-    div.style.fontSize = '12px';
-    div.style.lineHeight = '1.6';
-    div.style.borderRadius = '4px';
-    div.style.boxShadow = '0 2px 8px rgba(0,0,0,0.15)';
-    div.innerHTML =
-      '<strong>Legend</strong><br>' +
-      '<span style="display:inline-block;width:12px;height:12px;background:#C5A258;border-radius:50%;vertical-align:middle"></span> Subject<br>' +
-      '<span style="display:inline-block;width:12px;height:12px;background:#1B3A5C;border-radius:50%;vertical-align:middle"></span> Sale Comps<br>' +
-      '<span style="display:inline-block;width:12px;height:12px;background:#F57C00;border-radius:50%;vertical-align:middle"></span> On-Market<br>' +
-      '<span style="display:inline-block;width:12px;height:12px;background:#2E7D32;border-radius:50%;vertical-align:middle"></span> Rent Comps';
-    return div;
-  };
-  legend.addTo(map);
+  // -- Map 1: Sale Comps + On-Market --
+  if (document.getElementById('sale-map')) {
+    var saleMap = L.map('sale-map').setView([SUBJECT[0] - 0.001, SUBJECT[1] - 0.005], 14);
+    tile(saleMap);
+    placeSubject(saleMap);
+    SALE_COMPS.forEach(function(c){
+      L.marker([c[0], c[1]], {icon: makeIcon(c[2], '#1B3A5C', 26)})
+        .addTo(saleMap).bindPopup('<strong>Sale Comp ' + c[2] + ': ' + c[3] + '</strong><br>' + c[4]);
+    });
+    ON_MARKET.forEach(function(c){
+      L.marker([c[0], c[1]], {icon: makeIcon(c[2], '#F57C00', 26)})
+        .addTo(saleMap).bindPopup('<strong>On-Market ' + c[2] + ': ' + c[3] + '</strong><br>' + c[4]);
+    });
+  }
+
+  // -- Map 2: Rent Comps (tighter zoom for ¼-mile radius) --
+  if (document.getElementById('rent-map')) {
+    var rentMap = L.map('rent-map').setView([SUBJECT[0], SUBJECT[1] - 0.002], 16);
+    tile(rentMap);
+    placeSubject(rentMap);
+    RENT_COMPS.forEach(function(c){
+      L.marker([c[0], c[1]], {icon: makeIcon(c[2], '#2E7D32', 24)})
+        .addTo(rentMap).bindPopup('<strong>Rent Comp ' + c[2] + ': ' + c[3] + '</strong><br>' + c[4]);
+    });
+    // Quarter-mile radius circle around subject
+    L.circle([SUBJECT[0], SUBJECT[1]], {
+      radius: 402, // 0.25 miles in meters
+      color: '#C5A258', weight: 1.5, fillColor: '#C5A258', fillOpacity: 0.05,
+      dashArray: '6,6'
+    }).addTo(rentMap);
+  }
 })();
 </script>
 
