@@ -78,27 +78,59 @@
 
   /* COVER */
   .cover {
-    background:
-      linear-gradient(135deg, rgba(27,58,92,0.88) 0%, rgba(18,40,71,0.78) 60%, rgba(18,40,71,0.94) 100%),
-      url('images/aerial.png') center/cover no-repeat,
-      linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
     color: var(--white);
     min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
     padding: 80px 24px;
     position: relative; overflow: hidden;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
   }
-  .cover::before {
-    content: ""; position: absolute; top: 0; right: 0; width: 50%; height: 100%;
-    background: radial-gradient(circle at 80% 50%, rgba(197, 162, 88, 0.18), transparent 60%);
-    pointer-events: none;
+  .cover-slide {
+    position: absolute; inset: 0; z-index: 1;
+    background-size: cover; background-position: center;
+    will-change: opacity;
   }
-  .cover::after {
+  .cover-slide-front {
+    background-image: url('images/front.png');
+    animation: fadeFront 14s infinite;
+  }
+  .cover-slide-aerial {
+    background-image: url('images/aerial.png');
+    animation: fadeAerial 14s infinite;
+  }
+  @keyframes fadeFront {
+    0%, 42% { opacity: 1; }
+    50%, 92% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @keyframes fadeAerial {
+    0%, 42% { opacity: 0; }
+    50%, 92% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  .cover-overlay {
+    position: absolute; inset: 0; z-index: 2; pointer-events: none;
+    background:
+      linear-gradient(135deg, rgba(27,58,92,0.78) 0%, rgba(18,40,71,0.55) 50%, rgba(18,40,71,0.92) 100%),
+      radial-gradient(circle at 80% 30%, rgba(197, 162, 88, 0.22), transparent 60%);
+  }
+  .cover-overlay::after {
     content: ""; position: absolute; inset: 0;
     background: linear-gradient(180deg, transparent 0%, rgba(18,40,71,0.5) 100%);
-    pointer-events: none;
   }
   .cover-inner {
-    max-width: 1280px; margin: 0 auto; width: 100%; position: relative; z-index: 2;
+    max-width: 1280px; margin: 0 auto; width: 100%; position: relative; z-index: 3;
+  }
+  .cover-dots {
+    position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%);
+    z-index: 4; display: flex; gap: 10px;
+  }
+  .cover-dots .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+    transition: background 0.4s, transform 0.4s;
+  }
+  .cover-dots .dot.active {
+    background: var(--gold); transform: scale(1.4);
   }
   .cover-eyebrow {
     color: var(--gold); font-size: 13px; font-weight: 600;
@@ -468,6 +500,13 @@
 
 <!-- COVER -->
 <section class="cover" id="cover">
+  <div class="cover-slide cover-slide-front"></div>
+  <div class="cover-slide cover-slide-aerial"></div>
+  <div class="cover-overlay"></div>
+  <div class="cover-dots">
+    <span class="dot active" id="dot-front"></span>
+    <span class="dot" id="dot-aerial"></span>
+  </div>
   <div class="cover-inner">
     <div class="cover-eyebrow">Broker Opinion of Value · May 2026</div>
     <h1>Del Rey<br /><span class="gold">Apartments</span></h1>
@@ -1702,6 +1741,22 @@
     </p>
   </div>
 </div>
+
+<!-- COVER SLIDER DOTS -->
+<script>
+(function(){
+  var dotFront = document.getElementById('dot-front');
+  var dotAerial = document.getElementById('dot-aerial');
+  if (!dotFront || !dotAerial) return;
+  // Cycle dots in sync with the 14s CSS animation
+  var phase = 0;
+  setInterval(function(){
+    phase = (phase + 1) % 2;
+    dotFront.classList.toggle('active', phase === 0);
+    dotAerial.classList.toggle('active', phase === 1);
+  }, 7000);
+})();
+</script>
 
 <!-- LEAFLET MAP SCRIPT -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
