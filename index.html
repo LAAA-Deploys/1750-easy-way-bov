@@ -743,7 +743,7 @@
       </div>
 
       <div class="pricing-card pro-forma">
-        <div class="card-label">Stabilized — Pro Forma (20×2BR + 4×1BR)</div>
+        <div class="card-label">Stabilized — Pro Forma</div>
         <div class="card-title">Mark-to-Market Potential</div>
         <div class="pricing-row"><span class="lbl">Avg Monthly Rent / Unit (wtd)</span><span class="val">$2,325</span></div>
         <div class="pricing-row"><span class="lbl">Gross Scheduled Rent</span><span class="val">$669,600</span></div>
@@ -758,138 +758,152 @@
 
     <h3 style="font-family: 'Playfair Display', serif; color: var(--navy); font-size: 22px; margin: 48px 0 16px;">Itemized Operating Expenses</h3>
     <p style="font-size: 14px; color: var(--muted); margin-bottom: 20px; max-width: 820px;">
-      <strong>In-Place column</strong> reflects seller's actual 2025 cash-basis operating expenses (Ebner Trust
-      year-end ledger), with property tax adjusted to a buyer-reassessed basis at Orange County's 1.357%
-      effective rate × $5.8M acquisition price. <strong>Pro-Forma columns</strong> reflect normalized post-renovation
-      operations with management at 4% of GSR, lower repairs &amp; maintenance reserve, and continued seller-paid
-      utilities (RUBS not yet implemented).
+      The <strong>Seller 2025 P&amp;L</strong> column reflects actual cash-basis operating expenses from the
+      Ebner Trust year-end ledger. The <strong>Buyer Y1 Adjusted</strong> column reflects normalized buyer-side
+      Year-One operations: property tax reset to 1.357% × $5.8M acquisition; earthquake insurance dropped;
+      gardening renegotiated to $4,800; six repair categories combined into a single $750/unit reserve. The
+      <em>Source</em> column flags each line as actual seller history or estimated buyer cost.
     </p>
     <div class="data-table-wrap">
       <table class="data">
         <thead>
           <tr>
             <th>Line Item</th>
-            <th>Basis / Source</th>
-            <th class="right">In-Place<br/><span style="font-weight:400;font-size:11px">(Actual 2025)</span></th>
-            <th class="right">Pro-Forma · Mix A<br/><span style="font-weight:400;font-size:11px">16 × 2BR + 8 × 1BR</span></th>
-            <th class="right">Pro-Forma · Mix B<br/><span style="font-weight:400;font-size:11px">20 × 2BR + 4 × 1BR</span></th>
+            <th>Source</th>
+            <th>Notes</th>
+            <th class="right">Seller 2025<br/><span style="font-weight:400;font-size:11px">(Actual)</span></th>
+            <th class="right">Buyer Y1 Adjusted<br/><span style="font-weight:400;font-size:11px">(Normalized)</span></th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td><strong>Property Tax</strong></td>
-            <td>1.357% × $5.8M (buyer-reassessed)</td>
-            <td class="right">$78,706</td><td class="right">$78,706</td><td class="right">$78,706</td>
+            <td><span style="background:#FAF6E8;color:var(--navy);font-size:10px;font-weight:600;padding:2px 8px;border-radius:3px;letter-spacing:1px;text-transform:uppercase">Estimated</span></td>
+            <td>1.357% × $5.8M (buyer-reassessed at acquisition)</td>
+            <td class="right">$42,018</td><td class="right">$78,706</td>
           </tr>
           <tr>
             <td><strong>Insurance — Business / Liability</strong></td>
-            <td>Farmers Insurance (annualized)</td>
-            <td class="right">$15,387</td><td class="right">$15,387</td><td class="right">$15,387</td>
+            <td><span style="background:#FAF6E8;color:var(--navy);font-size:10px;font-weight:600;padding:2px 8px;border-radius:3px;letter-spacing:1px;text-transform:uppercase">Estimated</span></td>
+            <td>Farmers (seller paid 6mo ahead in 2025; annualized to $15,387)</td>
+            <td class="right">$29,645</td><td class="right">$15,387</td>
           </tr>
           <tr>
             <td>Insurance — Earthquake</td>
-            <td>Sanchez Insurance (BUYER DROPS in Y1 onward)</td>
-            <td class="right">$12,175</td><td class="right">$0</td><td class="right">$0</td>
+            <td><span style="background:#FAF6E8;color:var(--navy);font-size:10px;font-weight:600;padding:2px 8px;border-radius:3px;letter-spacing:1px;text-transform:uppercase">Estimated</span></td>
+            <td>Sanchez Insurance — BUYER DROPS in Y1</td>
+            <td class="right">$12,175</td><td class="right">$0</td>
           </tr>
           <tr>
             <td>Insurance — Workers Comp</td>
+            <td><span style="background:#1B3A5C;color:#fff;font-size:10px;font-weight:600;padding:2px 8px;border-radius:3px;letter-spacing:1px;text-transform:uppercase">Seller P&amp;L</span></td>
             <td>State Compensation Insurance Fund</td>
-            <td class="right">$1,360</td><td class="right">$1,360</td><td class="right">$1,360</td>
+            <td class="right">$1,360</td><td class="right">$1,360</td>
           </tr>
           <tr>
             <td><strong>Property Management</strong></td>
-            <td>Actual 5% (Duke &amp; Assoc) / 4% PF</td>
-            <td class="right">$19,842</td><td class="right">$25,920</td><td class="right">$26,784</td>
+            <td><span style="background:#FAF6E8;color:var(--navy);font-size:10px;font-weight:600;padding:2px 8px;border-radius:3px;letter-spacing:1px;text-transform:uppercase">Estimated</span></td>
+            <td>Duke &amp; Assoc 5% actual → buyer normalize 4% of GSR</td>
+            <td class="right">$19,842</td><td class="right">$15,846</td>
           </tr>
           <tr>
             <td>Maintenance &amp; Gardening</td>
-            <td>R.G.L.S. (actual) → buyer renegotiates contract</td>
-            <td class="right">$13,125</td><td class="right">$4,800</td><td class="right">$4,800</td>
+            <td><span style="background:#FAF6E8;color:var(--navy);font-size:10px;font-weight:600;padding:2px 8px;border-radius:3px;letter-spacing:1px;text-transform:uppercase">Estimated</span></td>
+            <td>R.G.L.S. (actual) → buyer renegotiates contract to $400/mo</td>
+            <td class="right">$13,125</td><td class="right">$4,800</td>
           </tr>
           <tr>
-            <td>Combined Repairs Reserve</td>
-            <td>Building + Plumbing + Equipment + Parking + Roof + Painting → $750/u × 24 in PF</td>
-            <td class="right">$29,778</td><td class="right">$18,000</td><td class="right">$18,000</td>
-          </tr>
-          <tr>
-            <td>Replacement Reserves</td>
-            <td>$300 / unit</td>
-            <td class="right">$7,200</td><td class="right">$7,200</td><td class="right">$7,200</td>
-          </tr>
-          <tr>
-            <td>Water &amp; Sewer</td>
-            <td>City of Anaheim — actual</td>
-            <td class="right">$10,168</td><td class="right">$10,168</td><td class="right">$10,168</td>
-          </tr>
-          <tr>
-            <td>Trash / Refuse</td>
-            <td>Mor Construction rolloff</td>
-            <td class="right">$1,372</td><td class="right">$1,800</td><td class="right">$1,800</td>
-          </tr>
-          <tr>
-            <td>Utilities — Gas &amp; CAM Electric</td>
-            <td>The Gas Co. + City of Anaheim</td>
-            <td class="right">$3,828</td><td class="right">$3,828</td><td class="right">$3,828</td>
+            <td><strong>Combined Repairs Reserve</strong></td>
+            <td><span style="background:#FAF6E8;color:var(--navy);font-size:10px;font-weight:600;padding:2px 8px;border-radius:3px;letter-spacing:1px;text-transform:uppercase">Estimated</span></td>
+            <td>Bldg + Plumbing + Equipment + Parking + Roof + Painting → $750/u × 24</td>
+            <td class="right">$29,778</td><td class="right">$18,000</td>
           </tr>
           <tr>
             <td>Pest Control</td>
+            <td><span style="background:#1B3A5C;color:#fff;font-size:10px;font-weight:600;padding:2px 8px;border-radius:3px;letter-spacing:1px;text-transform:uppercase">Seller P&amp;L</span></td>
             <td>Active Pest Control monthly</td>
-            <td class="right">$1,657</td><td class="right">$1,657</td><td class="right">$1,657</td>
+            <td class="right">$1,657</td><td class="right">$1,657</td>
           </tr>
           <tr>
             <td>Supplies (Cleaning + Building)</td>
-            <td>Lavern Burn 2025 actual</td>
-            <td class="right">$5,029</td><td class="right">$3,000</td><td class="right">$3,000</td>
+            <td><span style="background:#FAF6E8;color:var(--navy);font-size:10px;font-weight:600;padding:2px 8px;border-radius:3px;letter-spacing:1px;text-transform:uppercase">Estimated</span></td>
+            <td>Lavern Burn 2025 actual → buyer reduce to $3,500</td>
+            <td class="right">$5,029</td><td class="right">$3,500</td>
+          </tr>
+          <tr>
+            <td>Utilities — Gas &amp; CAM Electric</td>
+            <td><span style="background:#1B3A5C;color:#fff;font-size:10px;font-weight:600;padding:2px 8px;border-radius:3px;letter-spacing:1px;text-transform:uppercase">Seller P&amp;L</span></td>
+            <td>The Gas Co. + City of Anaheim CAM electric</td>
+            <td class="right">$3,828</td><td class="right">$3,828</td>
+          </tr>
+          <tr>
+            <td>Utilities — Water &amp; Sewer</td>
+            <td><span style="background:#1B3A5C;color:#fff;font-size:10px;font-weight:600;padding:2px 8px;border-radius:3px;letter-spacing:1px;text-transform:uppercase">Seller P&amp;L</span></td>
+            <td>City of Anaheim (RUBS opportunity for buyer)</td>
+            <td class="right">$10,168</td><td class="right">$10,168</td>
+          </tr>
+          <tr>
+            <td>Trash / Refuse</td>
+            <td><span style="background:#FAF6E8;color:var(--navy);font-size:10px;font-weight:600;padding:2px 8px;border-radius:3px;letter-spacing:1px;text-transform:uppercase">Estimated</span></td>
+            <td>Mor Construction rolloff (modest buyer increase)</td>
+            <td class="right">$1,372</td><td class="right">$1,800</td>
           </tr>
           <tr>
             <td>Telephone</td>
+            <td><span style="background:#1B3A5C;color:#fff;font-size:10px;font-weight:600;padding:2px 8px;border-radius:3px;letter-spacing:1px;text-transform:uppercase">Seller P&amp;L</span></td>
             <td>AT&amp;T landline</td>
-            <td class="right">$795</td><td class="right">$795</td><td class="right">$795</td>
+            <td class="right">$795</td><td class="right">$795</td>
           </tr>
           <tr>
-            <td>Inspections / Permits / Misc</td>
-            <td>City inspections + admin</td>
-            <td class="right">$5,789</td><td class="right">$3,500</td><td class="right">$3,500</td>
-          </tr>
-          <tr>
-            <td>Returned Check Fee Credit</td>
-            <td>NSF refund</td>
-            <td class="right">($25)</td><td class="right">$0</td><td class="right">$0</td>
-          </tr>
-          <tr>
-            <td>Christmas Gift Cards (non-recurring)</td>
-            <td>Tenant gifts (one-time)</td>
-            <td class="right">$3,525</td><td class="right">$0</td><td class="right">$0</td>
+            <td>Inspections / Permits</td>
+            <td><span style="background:#1B3A5C;color:#fff;font-size:10px;font-weight:600;padding:2px 8px;border-radius:3px;letter-spacing:1px;text-transform:uppercase">Seller P&amp;L</span></td>
+            <td>City of Anaheim QRHP inspection fees</td>
+            <td class="right">$450</td><td class="right">$450</td>
           </tr>
           <tr>
             <td>Professional Fees / Appraisal</td>
-            <td>Craftsman Appraisal (one-time)</td>
-            <td class="right">$400</td><td class="right">$400</td><td class="right">$400</td>
+            <td><span style="background:#FAF6E8;color:var(--navy);font-size:10px;font-weight:600;padding:2px 8px;border-radius:3px;letter-spacing:1px;text-transform:uppercase">Estimated</span></td>
+            <td>Craftsman Appraisal (one-time, removed Y1)</td>
+            <td class="right">$400</td><td class="right">$0</td>
           </tr>
           <tr>
-            <td>On-Site Resident Manager</td>
-            <td>Allowance (PF only)</td>
-            <td class="right">$0</td><td class="right">$12,000</td><td class="right">$12,000</td>
+            <td>Christmas Gift Cards</td>
+            <td><span style="background:#FAF6E8;color:var(--navy);font-size:10px;font-weight:600;padding:2px 8px;border-radius:3px;letter-spacing:1px;text-transform:uppercase">Estimated</span></td>
+            <td>Non-recurring tenant gifts (removed Y1)</td>
+            <td class="right">$3,525</td><td class="right">$0</td>
           </tr>
           <tr>
-            <td>Turnover &amp; Leasing</td>
-            <td>$200 / unit blended (PF only)</td>
-            <td class="right">$0</td><td class="right">$4,800</td><td class="right">$4,800</td>
+            <td>Miscellaneous</td>
+            <td><span style="background:#FAF6E8;color:var(--navy);font-size:10px;font-weight:600;padding:2px 8px;border-radius:3px;letter-spacing:1px;text-transform:uppercase">Estimated</span></td>
+            <td>Balcony inspection + small admin items</td>
+            <td class="right">$1,020</td><td class="right">$500</td>
+          </tr>
+          <tr>
+            <td>Returned Check Fee Credit</td>
+            <td><span style="background:#1B3A5C;color:#fff;font-size:10px;font-weight:600;padding:2px 8px;border-radius:3px;letter-spacing:1px;text-transform:uppercase">Seller P&amp;L</span></td>
+            <td>NSF refund (one-time)</td>
+            <td class="right">($25)</td><td class="right">$0</td>
+          </tr>
+          <tr>
+            <td>Uncategorized</td>
+            <td><span style="background:#1B3A5C;color:#fff;font-size:10px;font-weight:600;padding:2px 8px;border-radius:3px;letter-spacing:1px;text-transform:uppercase">Seller P&amp;L</span></td>
+            <td>Setup rolloff, etc.</td>
+            <td class="right">$200</td><td class="right">$0</td>
           </tr>
           <tr class="subject">
             <td><strong>Total Operating Expenses</strong></td>
+            <td>—</td>
             <td><strong>—</strong></td>
-            <td class="right"><strong>$214,050</strong></td>
-            <td class="right"><strong>$193,321</strong></td>
-            <td class="right"><strong>$194,185</strong></td>
+            <td class="right"><strong>$177,362</strong></td>
+            <td class="right"><strong>$156,797</strong></td>
           </tr>
           <tr>
-            <td colspan="2" style="text-align:right;color:var(--muted);font-style:italic">Expense Ratio (% of EGI)</td>
-            <td class="right">53.9%</td><td class="right">31.4%</td><td class="right">30.5%</td>
+            <td colspan="3" style="text-align:right;color:var(--muted);font-style:italic">Expense Ratio (% of EGI)</td>
+            <td class="right">44.7%</td><td class="right">39.5%</td>
           </tr>
           <tr>
-            <td colspan="2" style="text-align:right;color:var(--muted);font-style:italic">Per Unit OpEx</td>
-            <td class="right">$8,919</td><td class="right">$8,055</td><td class="right">$8,091</td>
+            <td colspan="3" style="text-align:right;color:var(--muted);font-style:italic">Per Unit OpEx</td>
+            <td class="right">$7,390</td><td class="right">$6,533</td>
           </tr>
         </tbody>
       </table>
@@ -974,11 +988,10 @@
       </div>
     </div>
 
-    <h3 style="font-family: 'Playfair Display', serif; color: var(--navy); font-size: 22px; margin: 48px 0 16px;">Working Unit Mix</h3>
+    <h3 style="font-family: 'Playfair Display', serif; color: var(--navy); font-size: 22px; margin: 48px 0 16px;">Unit Mix</h3>
     <p style="font-size: 14px; color: var(--muted); margin-bottom: 16px; max-width: 760px;">
-      Working mix derived from the seller's 2025 rent ledger: the four units with the lowest annual rents are
-      designated as 1-bedroom units (Units 109, 112, 208, 209), with the remaining twenty designated as 2-bedroom.
-      Subject to final confirmation by seller-provided unit-mix schedule.
+      Confirmed mix: 20 × 2-bedroom and 4 × 1-bedroom units. The four 1-bedroom units (Units 109, 112, 208, 209)
+      correspond to the four lowest annual rents in the seller's 2025 ledger.
     </p>
     <div class="data-table-wrap">
       <table class="data">
@@ -1017,57 +1030,6 @@
       </p>
     </div>
 
-    <h3 style="font-family: 'Playfair Display', serif; color: var(--navy); font-size: 22px; margin: 48px 0 16px;">Mix Sensitivity — Pro-Forma Upside Range</h3>
-    <p style="font-size: 14px; color: var(--muted); margin-bottom: 20px; max-width: 760px;">
-      Until the seller-provided rent roll confirms unit mix, two scenarios bracket the pro-forma upside.
-      Both stay inside the gross building area (24,455 SF) within 0.2% tolerance and use the same validated
-      market rents from the W Sumac Lane / S Nutwood Street rent comp set.
-    </p>
-    <div class="data-table-wrap">
-      <table class="data">
-        <thead>
-          <tr>
-            <th>Scenario</th>
-            <th class="center">2BR/2BA</th>
-            <th class="center">1BR/1BA</th>
-            <th class="right">Mix Wtd Rent</th>
-            <th class="right">Market GSR</th>
-            <th class="right">Pro-Forma NOI</th>
-            <th class="right">PF Cap @ $5.8M</th>
-            <th class="right">PF GRM @ $5.8M</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Mix A — Conservative</strong><br/><span style="font-size:12px;color:var(--muted)">16 × 2BR + 8 × 1BR</span></td>
-            <td class="center">16 (66.7%)</td>
-            <td class="center">8 (33.3%)</td>
-            <td class="right">$2,250</td>
-            <td class="right">$648,000</td>
-            <td class="right">~$422,279</td>
-            <td class="right"><strong>7.28%</strong></td>
-            <td class="right">8.95×</td>
-          </tr>
-          <tr class="subject">
-            <td><strong>Mix B — Working Mix (per rent ledger)</strong><br/><span style="font-size:12px;color:var(--navy)">20 × 2BR + 4 × 1BR</span></td>
-            <td class="center"><strong>20 (83.3%)</strong></td>
-            <td class="center"><strong>4 (16.7%)</strong></td>
-            <td class="right"><strong>$2,325</strong></td>
-            <td class="right"><strong>$669,600</strong></td>
-            <td class="right"><strong>~$441,935</strong></td>
-            <td class="right"><strong>7.62%</strong></td>
-            <td class="right"><strong>8.66×</strong></td>
-          </tr>
-        </tbody>
-      </table>
-      <p style="font-size: 12px; color: var(--muted); margin-top: 12px; font-style: italic;">
-        Mix A reflects the conservative working assumption (16 × 2BR + 8 × 1BR). Mix B reflects a more
-        2BR-heavy configuration (20 × 2BR + 4 × 1BR), increasing pro-forma NOI by approximately $12,000/year and
-        compressing the stabilized cap rate at $5.8M from 7.62% to 7.62%. In-place metrics (3.15% cap, $183K NOI)
-        are unchanged across both scenarios because the $1,400/unit average reflects the blended in-place
-        rent regardless of mix.
-      </p>
-    </div>
   </div>
 </section>
 
