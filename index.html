@@ -359,32 +359,54 @@
   }
   footer .footer-inner {
     max-width: 1280px; margin: 0 auto;
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+    gap: 32px;
   }
   footer .agent-card {
-    background: rgba(255,255,255,0.04); padding: 28px; border-radius: 4px;
-    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.04); padding: 36px; border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.10);
+    min-width: 0; /* allow flex children to shrink for word-wrap */
   }
   footer .agent-card .top {
-    display: flex; gap: 16px; align-items: center; margin-bottom: 16px;
+    display: flex; gap: 20px; align-items: center; margin-bottom: 24px;
+    padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.08);
   }
   footer .agent-card .top img {
-    width: 64px; height: 64px; border-radius: 50%;
+    width: 72px; height: 72px; border-radius: 50%;
     border: 2px solid var(--gold); object-fit: cover; background: #fff;
+    flex-shrink: 0;
   }
   footer .agent-card .top .name {
-    font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 600;
+    font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 600;
   }
   footer .agent-card .top .title {
     color: var(--gold); font-size: 11px; letter-spacing: 1.5px;
-    text-transform: uppercase; margin-top: 4px;
+    text-transform: uppercase; margin-top: 6px;
   }
-  footer .agent-card .info { font-size: 14px; line-height: 1.8; }
-  footer .agent-card .info .row { display: flex; gap: 8px; }
-  footer .agent-card .info .lbl { opacity: 0.6; min-width: 70px; }
-  footer .agent-card .info a { color: var(--gold-light); text-decoration: none; }
-  footer .agent-card .info a:hover { text-decoration: underline; }
+  footer .agent-card .info { font-size: 15px; line-height: 1.9; }
+  footer .agent-card .info .row {
+    display: flex; gap: 14px; align-items: baseline;
+    flex-wrap: wrap;
+  }
+  footer .agent-card .info .lbl {
+    opacity: 0.55; min-width: 72px;
+    font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+    flex-shrink: 0;
+  }
+  footer .agent-card .info .val,
+  footer .agent-card .info a {
+    color: var(--white); text-decoration: none;
+    word-break: break-word; overflow-wrap: anywhere;
+    flex: 1; min-width: 0;
+  }
+  footer .agent-card .info a {
+    color: var(--gold-light);
+    border-bottom: 1px dotted rgba(212, 181, 118, 0.3);
+    padding-bottom: 1px; transition: color 0.2s, border-color 0.2s;
+  }
+  footer .agent-card .info a:hover {
+    color: var(--gold); border-bottom-color: var(--gold);
+  }
 
   .office-block {
     grid-column: 1 / -1; text-align: center;
@@ -1704,7 +1726,7 @@
       <div class="info">
         <div class="row"><span class="lbl">Direct</span><a href="tel:8182122808">(818) 212-2808</a></div>
         <div class="row"><span class="lbl">Email</span><a href="mailto:Glen.Scher@marcusmillichap.com">Glen.Scher@marcusmillichap.com</a></div>
-        <div class="row"><span class="lbl">DRE Lic.</span><span>CA 01962976</span></div>
+        <div class="row"><span class="lbl">DRE Lic.</span><span class="val">CA 01962976</span></div>
       </div>
     </div>
 
@@ -1719,7 +1741,7 @@
       <div class="info">
         <div class="row"><span class="lbl">Direct</span><a href="tel:8182122748">(818) 212-2748</a></div>
         <div class="row"><span class="lbl">Email</span><a href="mailto:Filip.Niculete@marcusmillichap.com">Filip.Niculete@marcusmillichap.com</a></div>
-        <div class="row"><span class="lbl">DRE Lic.</span><span>CA 01905352</span></div>
+        <div class="row"><span class="lbl">DRE Lic.</span><span class="val">CA 01905352</span></div>
       </div>
     </div>
 
