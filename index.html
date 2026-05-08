@@ -1539,32 +1539,32 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 (function(){
-  // Subject + comp coordinates (approximate from public geocoding)
-  var SUBJECT = [33.8090, -117.9803, "1750 S Easy Way (Subject)", "Del Rey Apartments · 24 Units · 1977"];
+  // Subject + comp coordinates (Census Bureau Geocoder, May 2026)
+  var SUBJECT = [33.803639, -117.947781, "1750 S Easy Way (Subject)", "Del Rey Apartments · 24 Units · 1977"];
 
   var SALE_COMPS = [
-    [33.8222, -118.0096, "1", "3300 W Orange Ave", "$2,725,000 · 9 units · 1976 · 5.05% cap · 01/2026"],
-    [33.8095, -117.9836, "2", "1803 W Sumac Ln", "$3,350,000 · 14 units · 1960 · 4.78% cap · 09/2025"],
-    [33.8146, -117.9821, "3", "1768 W Juno Ave (UC)", "$3,795,000 · 14 units · 1960 · 5.03% cap · UC"],
-    [33.8108, -117.9928, "4", "808 S Falcon St", "$2,950,000 · 8 units · 1961 · 5.08% cap · 07/2025"],
-    [33.8092, -117.9839, "5", "1752 W Sumac Ln", "$2,400,000 · 8 units · 1959 · 5.50% cap · 05/2025"]
+    [33.824562, -118.005635, "1", "3300 W Orange Ave", "$2,725,000 · 9 units · 1976 · 5.05% cap · 01/2026"],
+    [33.804601, -117.945930, "2", "1803 W Sumac Ln", "$3,350,000 · 14 units · 1960 · 4.78% cap · 09/2025"],
+    [33.818725, -117.944478, "3", "1768 W Juno Ave (UC)", "$3,795,000 · 14 units · 1960 · 5.03% cap · UC"],
+    [33.821305, -117.942462, "4", "808 S Falcon St", "$2,950,000 · 8 units · 1961 · 5.08% cap · 07/2025"],
+    [33.804487, -117.944461, "5", "1752 W Sumac Ln", "$2,400,000 · 8 units · 1959 · 5.50% cap · 05/2025"]
   ];
 
   var ON_MARKET = [
-    [33.8160, -118.0036, "A", "401 S Beach Blvd (El Pueblo)", "$8,500,000 · 30 units · 1978 · 4.8% cap · Active"],
-    [33.8174, -118.0006, "B", "3221 W Ball Rd (Olivewood)", "$4,399,000 · 26 units · 1964 · 4.4% cap · Active"],
-    [33.8133, -117.9821, "C", "1774-1780 W Juno Ave", "$3,995,000 · 14 units · 1960 · 5.9% cap · Active"]
+    [33.827418, -117.993508, "A", "401 S Beach Blvd (El Pueblo)", "$8,500,000 · 30 units · 1978 · 4.8% cap · Active"],
+    [33.817383, -118.002945, "B", "3221 W Ball Rd (Olivewood)", "$4,399,000 · 26 units · 1964 · 4.4% cap · Active"],
+    [33.818725, -117.944706, "C", "1774-1780 W Juno Ave", "$3,995,000 · 14 units · 1960 · 5.9% cap · Active"]
   ];
 
   var RENT_COMPS = [
-    [33.8074, -117.9764, "R1", "1668 S Nutwood St (Nutwood Park)", "1BR/1BA · 750 SF · $1,925"],
-    [33.8085, -117.9826, "R2", "1776 W Sumac Ln (Village Apts)", "Studio-3BR · $1,700-$3,250 (full grid)"],
-    [33.8090, -117.9842, "R3", "1828 W Sumac Ln, Unit 1", "1BR/1BA · 700 SF · $1,650"],
-    [33.8091, -117.9844, "R4", "1832 W Sumac Ln, Apt 5", "1BR/1BA · 700 SF · $1,800"],
-    [33.8088, -117.9836, "R5", "1812 W Sumac Ln, Unit 2", "1BR/1BA · $1,630"],
-    [33.8089, -117.9836, "R6", "1818 W Sumac Ln (remodeled)", "2BR/1BA · $2,250"],
-    [33.8087, -117.9831, "R7", "1808 W Sumac Ln, Unit 1", "2BR/1BA w/ garage · $2,095"],
-    [33.8125, -117.9938, "R8", "150 S Magnolia (Arbors)", "2BR · $2,090-$2,900 (1970, 143u)"]
+    [33.805278, -117.950067, "R1", "1668 S Nutwood St (Nutwood Park)", "1BR/1BA · 750 SF · $1,925"],
+    [33.804487, -117.945186, "R2", "1776 W Sumac Ln (Village Apts)", "Studio-3BR · $1,700-$3,250 (full grid)"],
+    [33.804487, -117.946492, "R3", "1828 W Sumac Ln, Unit 1", "1BR/1BA · 700 SF · $1,650"],
+    [33.804487, -117.946565, "R4", "1832 W Sumac Ln, Apt 5", "1BR/1BA · 700 SF · $1,800"],
+    [33.804487, -117.946197, "R5", "1812 W Sumac Ln, Unit 2", "1BR/1BA · $1,630"],
+    [33.804487, -117.946308, "R6", "1818 W Sumac Ln (remodeled)", "2BR/1BA · $2,250"],
+    [33.804487, -117.946123, "R7", "1808 W Sumac Ln, Unit 1", "2BR/1BA w/ garage · $2,095"],
+    [33.830365, -117.975891, "R8", "150 S Magnolia (Arbors — superior)", "1BR/1BA · 680 SF · $2,400 (lowest avail)"]
   ];
 
   function makeIcon(label, bgColor, size) {
@@ -1590,27 +1590,33 @@
 
   // -- Map 1: Sale Comps + On-Market --
   if (document.getElementById('sale-map')) {
-    var saleMap = L.map('sale-map').setView([SUBJECT[0] - 0.001, SUBJECT[1] - 0.005], 14);
+    var saleMap = L.map('sale-map');
     tile(saleMap);
     placeSubject(saleMap);
+    var saleBounds = [[SUBJECT[0], SUBJECT[1]]];
     SALE_COMPS.forEach(function(c){
       L.marker([c[0], c[1]], {icon: makeIcon(c[2], '#1B3A5C', 26)})
         .addTo(saleMap).bindPopup('<strong>Sale Comp ' + c[2] + ': ' + c[3] + '</strong><br>' + c[4]);
+      saleBounds.push([c[0], c[1]]);
     });
     ON_MARKET.forEach(function(c){
       L.marker([c[0], c[1]], {icon: makeIcon(c[2], '#F57C00', 26)})
         .addTo(saleMap).bindPopup('<strong>On-Market ' + c[2] + ': ' + c[3] + '</strong><br>' + c[4]);
+      saleBounds.push([c[0], c[1]]);
     });
+    saleMap.fitBounds(saleBounds, { padding: [40, 40] });
   }
 
-  // -- Map 2: Rent Comps (tighter zoom for ¼-mile radius) --
+  // -- Map 2: Rent Comps (auto-fit; ¼-mile radius circle around subject) --
   if (document.getElementById('rent-map')) {
-    var rentMap = L.map('rent-map').setView([SUBJECT[0], SUBJECT[1] - 0.002], 16);
+    var rentMap = L.map('rent-map');
     tile(rentMap);
     placeSubject(rentMap);
+    var rentBounds = [[SUBJECT[0], SUBJECT[1]]];
     RENT_COMPS.forEach(function(c){
       L.marker([c[0], c[1]], {icon: makeIcon(c[2], '#2E7D32', 24)})
         .addTo(rentMap).bindPopup('<strong>Rent Comp ' + c[2] + ': ' + c[3] + '</strong><br>' + c[4]);
+      rentBounds.push([c[0], c[1]]);
     });
     // Quarter-mile radius circle around subject
     L.circle([SUBJECT[0], SUBJECT[1]], {
@@ -1618,6 +1624,7 @@
       color: '#C5A258', weight: 1.5, fillColor: '#C5A258', fillOpacity: 0.05,
       dashArray: '6,6'
     }).addTo(rentMap);
+    rentMap.fitBounds(rentBounds, { padding: [40, 40] });
   }
 })();
 </script>
