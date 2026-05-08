@@ -226,6 +226,15 @@
   }
   table.data tr:hover td { background: rgba(197,162,88,0.04); }
   table.data tr.subject:hover td { background: #FAF6E8; }
+  table.data a.rent-link {
+    color: var(--navy); text-decoration: none;
+    border-bottom: 1px dotted var(--gold);
+    transition: color 0.2s;
+  }
+  table.data a.rent-link:hover { color: var(--gold); border-bottom-color: var(--navy); }
+  table.data a.rent-link::after {
+    content: "↗"; font-size: 10px; margin-left: 3px; opacity: 0.6;
+  }
   table.data .right { text-align: right; font-variant-numeric: tabular-nums; }
   table.data .center { text-align: center; }
   .badge {
@@ -1116,18 +1125,24 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>1668 S Nutwood St (Nutwood Park)</td><td>1BR/1BA</td><td class="right">750</td>
+          <tr><td><a class="rent-link" href="https://www.apartments.com/nutwood-park-apartments-anaheim-ca/s4z70m5/" target="_blank" rel="noopener">1668 S Nutwood St (Nutwood Park)</a></td><td>1BR/1BA</td><td class="right">750</td>
               <td class="right"><strong>$1,925</strong></td><td class="right">$2.57</td><td>1960s, ¼ mi from subject</td></tr>
-          <tr><td>1776 W Sumac Ln (Village Apartments)</td><td>1BR/1BA</td><td class="right">750</td>
+          <tr><td><a class="rent-link" href="https://www.apartments.com/village-apartments-anaheim-ca/9gj13c6/" target="_blank" rel="noopener">1776 W Sumac Ln (Village Apartments)</a></td><td>1BR/1BA</td><td class="right">750</td>
               <td class="right"><strong>$1,925–$1,950</strong></td><td class="right">$2.57–$2.60</td><td>1960s, adjacent to subject</td></tr>
-          <tr><td>1832 W Sumac Ln, Apt 5</td><td>1BR/1BA</td><td class="right">700</td>
+          <tr><td><a class="rent-link" href="https://www.redfin.com/CA/Anaheim/1832-W-Sumac-Ln-92804/home/3610231" target="_blank" rel="noopener">1832 W Sumac Ln, Apt 5</a></td><td>1BR/1BA</td><td class="right">700</td>
               <td class="right">$1,800</td><td class="right">$2.57</td><td>1960s</td></tr>
-          <tr><td>1828 W Sumac Ln, Unit 1</td><td>1BR/1BA</td><td class="right">700</td>
+          <tr><td><a class="rent-link" href="https://www.apartments.com/1828-w-sumac-ln-anaheim-ca/e2eby4n/" target="_blank" rel="noopener">1828 W Sumac Ln, Unit 1</a></td><td>1BR/1BA</td><td class="right">700</td>
               <td class="right">$1,650</td><td class="right">$2.36</td><td>1960s</td></tr>
-          <tr><td>1812 W Sumac Ln, Unit 2</td><td>1BR/1BA</td><td class="right">—</td>
+          <tr><td><a class="rent-link" href="https://www.apartments.com/1812-w-sumac-ln-anaheim-ca/mmgfgnl/" target="_blank" rel="noopener">1812 W Sumac Ln, Unit 2</a></td><td>1BR/1BA</td><td class="right">—</td>
               <td class="right">$1,630</td><td class="right">—</td><td>1960s</td></tr>
-          <tr><td>2122 W Juno Ave (Ball/Juno)</td><td>1BR/1BA</td><td class="right">—</td>
+          <tr><td><a class="rent-link" href="https://www.apartments.com/2122-w-juno-ave-anaheim-ca/7g5g9vx/" target="_blank" rel="noopener">2122 W Juno Ave (Ball/Juno)</a></td><td>1BR/1BA</td><td class="right">—</td>
               <td class="right">$1,450</td><td class="right">—</td><td>1960</td></tr>
+          <tr style="background:#FAF6E8">
+            <td><a class="rent-link" href="https://www.apartments.com/the-arbors-at-magnolia-anaheim-ca/jyy92q4/" target="_blank" rel="noopener">150 S Magnolia (Arbors at Magnolia)</a> <span style="display:inline-block;font-size:10px;background:var(--gold);color:#fff;padding:2px 6px;border-radius:3px;margin-left:4px;vertical-align:middle;letter-spacing:0.5px;font-weight:600">SUPERIOR</span></td>
+            <td>1BR/1BA · P1A</td><td class="right">680</td>
+            <td class="right">$2,400</td><td class="right">$3.53</td>
+            <td>1970 · 143u newly renovated · pool / basketball / controlled access</td>
+          </tr>
           <tr class="subject">
             <td><strong>Subject 1BR (assumed)</strong></td>
             <td><strong>1BR/1BA</strong></td><td class="right"><strong>~850</strong></td>
@@ -1136,6 +1151,13 @@
           </tr>
         </tbody>
       </table>
+      <p style="font-size: 12px; color: var(--muted); margin-top: 8px; font-style: italic;">
+        <strong>Note on Arbors at Magnolia:</strong> superior amenitized property — newly renovated 143-unit
+        institutional community with pool, basketball court, and controlled access. The $2,400/680 SF P1A floor
+        plan represents the lowest currently available rent. Subject is a non-amenitized 24-unit garden-style
+        property and should not be expected to match Arbors-level rents on a like-for-like basis. Comp shown to
+        bracket the upper bound of the 1BR submarket.
+      </p>
     </div>
 
     <h3 style="font-family: 'Playfair Display', serif; color: var(--navy); font-size: 22px; margin: 32px 0 12px;">2-Bedroom Comps</h3>
@@ -1149,14 +1171,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>1818 W Sumac Ln (remodeled)</td><td>2BR/1BA</td><td class="right">—</td>
+          <tr><td><a class="rent-link" href="https://www.apartments.com/1818-w-sumac-ln-anaheim-ca/1y661d5/" target="_blank" rel="noopener">1818 W Sumac Ln (remodeled)</a></td><td>2BR/1BA</td><td class="right">—</td>
               <td class="right">$2,250</td><td class="right">—</td><td>1960s — recently remodeled</td></tr>
-          <tr><td>1808 W Sumac Ln, Unit 1</td><td>2BR/1BA</td><td class="right">—</td>
+          <tr><td><a class="rent-link" href="https://www.apartments.com/1808-w-sumac-ln-anaheim-ca/phnq7vt/" target="_blank" rel="noopener">1808 W Sumac Ln, Unit 1</a></td><td>2BR/1BA</td><td class="right">—</td>
               <td class="right">$2,095</td><td class="right">—</td><td>1960, includes garage</td></tr>
-          <tr><td>1776 W Sumac Ln (Village)</td><td>2BR/1BA</td><td class="right">900</td>
+          <tr><td><a class="rent-link" href="https://www.apartments.com/village-apartments-anaheim-ca/9gj13c6/" target="_blank" rel="noopener">1776 W Sumac Ln (Village)</a></td><td>2BR/1BA</td><td class="right">900</td>
               <td class="right">$2,050</td><td class="right">$2.28</td><td>1960s</td></tr>
-          <tr><td>150 S Magnolia (Arbors)</td><td>2BR</td><td class="right">—</td>
-              <td class="right">$2,090–$2,900</td><td class="right">—</td><td>1970, 143-unit institutional</td></tr>
           <tr><td>401 S Beach Blvd (El Pueblo, on-market)</td><td>2BR/1.5BA</td><td class="right">850</td>
               <td class="right">$1,985</td><td class="right">$2.34</td><td>1978 — direct peer vintage</td></tr>
           <tr class="subject">
