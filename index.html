@@ -80,7 +80,7 @@
   .cover {
     background:
       linear-gradient(135deg, rgba(27,58,92,0.88) 0%, rgba(18,40,71,0.78) 60%, rgba(18,40,71,0.94) 100%),
-      url('images/hero.jpg') center/cover no-repeat,
+      url('images/aerial.png') center/cover no-repeat,
       linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
     color: var(--white);
     min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
@@ -157,12 +157,20 @@
 
   /* HERO BUILDING SHOWCASE (in property section) */
   .building-showcase {
+    position: relative;
     margin-bottom: 32px; border-radius: 4px; overflow: hidden;
     box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-    aspect-ratio: 16/8; background: var(--bg);
-    background-image: url('images/hero.jpg');
+    aspect-ratio: 16/9; background: var(--bg);
+    background-image: url('images/aerial.png');
     background-size: cover; background-position: center;
   }
+  .building-showcase .caption {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    padding: 16px 20px;
+    background: linear-gradient(transparent, rgba(18,40,71,0.85));
+    color: var(--white); font-size: 13px; letter-spacing: 0.5px;
+  }
+  .building-showcase .caption strong { color: var(--gold); margin-right: 8px; }
 
   /* PROPERTY SUMMARY */
   .summary-grid {
@@ -493,7 +501,9 @@
     <div class="section-title">A 24-Unit Value-Add Multifamily Asset in West Anaheim</div>
     <div class="section-divider"></div>
 
-    <div class="building-showcase"></div>
+    <div class="building-showcase">
+      <div class="caption"><strong>AERIAL</strong>1750 S Easy Way · 4 Buildings · 24 Units · 1.00 Acre · West Anaheim</div>
+    </div>
 
     <p class="section-subtitle">
       Del Rey Apartments is a 24-unit, four-building garden-style multifamily community
