@@ -1675,24 +1675,54 @@
       <table class="data">
         <thead>
           <tr>
-            <th>Exit Cap Rate</th><th class="right">Stabilized Value</th>
-            <th class="right">Refi Cash-Out</th><th class="right">Refi 24-Mo Return</th>
-            <th class="right">Sale Net Proceeds</th><th class="right">Sale 24-Mo Return</th>
+            <th rowspan="2" style="vertical-align:bottom">Exit Cap</th>
+            <th rowspan="2" class="right" style="vertical-align:bottom">Stabilized Value</th>
+            <th colspan="3" class="center" style="background:rgba(197,162,88,0.18);border-bottom:1px solid rgba(255,255,255,0.2)">Scenario 1 — Refi &amp; Hold</th>
+            <th colspan="3" class="center" style="background:rgba(46,125,50,0.18);border-bottom:1px solid rgba(255,255,255,0.2)">Scenario 2 — Sale</th>
+          </tr>
+          <tr>
+            <th class="right" style="background:rgba(197,162,88,0.18)">Profit</th>
+            <th class="right" style="background:rgba(197,162,88,0.18)">IRR</th>
+            <th class="right" style="background:rgba(197,162,88,0.18)">MOIC</th>
+            <th class="right" style="background:rgba(46,125,50,0.18)">Profit</th>
+            <th class="right" style="background:rgba(46,125,50,0.18)">IRR</th>
+            <th class="right" style="background:rgba(46,125,50,0.18)">MOIC</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>4.75%</td><td class="right">$9,479,137</td><td class="right">$761,139</td><td class="right">+57.2%</td><td class="right">$3,584,953</td><td class="right">+54.3%</td></tr>
-          <tr><td>5.00%</td><td class="right">$9,005,180</td><td class="right">$447,567</td><td class="right">+46.7%</td><td class="right">$3,134,251</td><td class="right">+34.9%</td></tr>
-          <tr class="subject"><td><strong>5.25%</strong></td><td class="right"><strong>$8,576,362</strong></td><td class="right"><strong>$153,835</strong></td><td class="right"><strong>+35.8%</strong></td><td class="right"><strong>$2,726,744</strong></td><td class="right"><strong>+17.4%</strong></td></tr>
-          <tr><td>5.50%</td><td class="right">$8,186,527</td><td class="right">($107,757)</td><td class="right">+25.5%</td><td class="right">$2,356,400</td><td class="right">+1.4%</td></tr>
-          <tr><td>5.75%</td><td class="right">$7,830,591</td><td class="right">($350,917)</td><td class="right">+15.3%</td><td class="right">$2,018,061</td><td class="right">(13.1%)</td></tr>
+          <tr>
+            <td>4.75%</td><td class="right">$9,479,137</td>
+            <td class="right">$1,735,137</td><td class="right">32.2%</td><td class="right">1.75×</td>
+            <td class="right">$1,261,180</td><td class="right">24.2%</td><td class="right">1.54×</td>
+          </tr>
+          <tr>
+            <td>5.00%</td><td class="right">$9,005,180</td>
+            <td class="right">$1,261,180</td><td class="right">24.2%</td><td class="right">1.54×</td>
+            <td class="right">$810,921</td><td class="right">16.1%</td><td class="right">1.35×</td>
+          </tr>
+          <tr class="subject">
+            <td><strong>5.25%</strong></td><td class="right"><strong>$8,576,362</strong></td>
+            <td class="right"><strong>$832,362</strong></td><td class="right"><strong>16.6%</strong></td><td class="right"><strong>1.36×</strong></td>
+            <td class="right"><strong>$403,544</strong></td><td class="right"><strong>8.4%</strong></td><td class="right"><strong>1.17×</strong></td>
+          </tr>
+          <tr>
+            <td>5.50%</td><td class="right">$8,186,527</td>
+            <td class="right">$442,527</td><td class="right">9.1%</td><td class="right">1.19×</td>
+            <td class="right">$33,201</td><td class="right">0.7%</td><td class="right">1.01×</td>
+          </tr>
+          <tr>
+            <td>5.75%</td><td class="right">$7,830,591</td>
+            <td class="right">$86,591</td><td class="right">1.8%</td><td class="right">1.04×</td>
+            <td class="right" style="color:#C62828">($304,939)</td><td class="right" style="color:#C62828">(6.8%)</td><td class="right" style="color:#C62828">0.87×</td>
+          </tr>
         </tbody>
       </table>
       <p style="font-size: 12px; color: var(--muted); margin-top: 12px; font-style: italic;">
-        Refi return assumes 65% LTV permanent loan at 5.75% / 30-yr amort, sized to stabilized value. Cash-Out
-        figures show net cash to sponsor at refi (negative values mean equity infusion required to cover
-        construction loan paydown). Sale scenario nets brokerage commissions (4%) plus closing costs (1%) and
-        retires the construction loan in full.
+        <strong>Refi profit</strong> = (Stabilized Value − Construction Loan Payoff) − Initial Equity, treating
+        the cash-out plus retained property equity as the sponsor's total position at the 24-month checkpoint.
+        Refi assumes 65% LTV permanent loan at 5.75% / 30-yr amort, sized to stabilized value. <strong>Sale
+        profit</strong> = Stab Value × 95% − Construction Loan Payoff − Initial Equity (4% brokerage + 1%
+        closing costs). Both IRRs annualized over 24-month hold; MOIC = Total Position ÷ Initial Equity.
       </p>
     </div>
 
