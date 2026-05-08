@@ -149,9 +149,10 @@
   .cover-team-text .title { color: var(--gold); font-size: 11px;
     letter-spacing: 1.5px; text-transform: uppercase; }
   .cover-tagline {
-    font-style: italic; font-size: 14px; opacity: 0.75; max-width: 420px;
-    text-align: right;
+    font-size: 13px; opacity: 0.85; max-width: 420px;
+    text-align: right; line-height: 1.5;
   }
+  .cover-tagline strong { color: var(--gold); font-weight: 600; }
   @media (max-width: 720px) { .cover-tagline { text-align: left; } }
 
   /* HERO BUILDING SHOWCASE (in property section) */
@@ -347,14 +348,30 @@
 
   .office-block {
     grid-column: 1 / -1; text-align: center;
-    border-top: 1px solid rgba(255,255,255,0.12); padding-top: 32px; margin-top: 24px;
-    font-size: 13px; opacity: 0.85;
+    border-top: 1px solid rgba(255,255,255,0.15); padding-top: 36px; margin-top: 28px;
+    font-size: 14px; line-height: 1.8;
   }
-  .office-block .tagline {
-    font-family: 'Playfair Display', serif; font-style: italic; font-size: 18px;
-    color: var(--gold); margin-bottom: 16px;
+  .office-block .brand-line {
+    font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 600;
+    color: var(--white); margin-bottom: 6px; letter-spacing: 0.5px;
   }
-  .office-block .small { font-size: 12px; opacity: 0.7; }
+  .office-block .brand-line .gold { color: var(--gold); }
+  .office-block .address-line {
+    font-size: 14px; opacity: 0.85; margin-bottom: 14px;
+  }
+  .office-block .stats-line {
+    display: inline-flex; gap: 24px; flex-wrap: wrap; justify-content: center;
+    padding: 12px 24px; margin: 8px 0 16px;
+    border: 1px solid rgba(255,255,255,0.12); border-radius: 4px;
+    background: rgba(255,255,255,0.03);
+  }
+  .office-block .stat-item {
+    font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; opacity: 0.9;
+  }
+  .office-block .stat-item strong { color: var(--gold); font-weight: 600; }
+  .office-block .web-link { font-size: 12px; opacity: 0.7; }
+  .office-block .web-link a { color: var(--gold-light); text-decoration: none; }
+  .office-block .web-link a:hover { text-decoration: underline; }
 
   /* DISCLAIMER */
   .disclaimer {
@@ -464,7 +481,7 @@
           <div class="title">Senior Managing Directors of Investments</div>
         </div>
       </div>
-      <div class="cover-tagline">Senior Managing Directors of Investments<br />The LAAA Team · Marcus &amp; Millichap</div>
+      <div class="cover-tagline"><strong>Senior Managing Directors of Investments</strong><br />The LAAA Team · Marcus &amp; Millichap</div>
     </div>
   </div>
 </section>
@@ -1128,7 +1145,7 @@
           <tr><td><a class="rent-link" href="https://www.apartments.com/nutwood-park-apartments-anaheim-ca/s4z70m5/" target="_blank" rel="noopener">1668 S Nutwood St (Nutwood Park)</a></td><td>1BR/1BA</td><td class="right">750</td>
               <td class="right"><strong>$1,925</strong></td><td class="right">$2.57</td><td>1960s, ¼ mi from subject</td></tr>
           <tr><td><a class="rent-link" href="https://www.apartments.com/village-apartments-anaheim-ca/9gj13c6/" target="_blank" rel="noopener">1776 W Sumac Ln (Village Apartments)</a></td><td>1BR/1BA</td><td class="right">750</td>
-              <td class="right"><strong>$1,925–$1,950</strong></td><td class="right">$2.57–$2.60</td><td>1960s, adjacent to subject</td></tr>
+              <td class="right"><strong>$1,925</strong></td><td class="right">$2.57</td><td>1960s, adjacent to subject (lowest avail.)</td></tr>
           <tr><td><a class="rent-link" href="https://www.redfin.com/CA/Anaheim/1832-W-Sumac-Ln-92804/home/3610231" target="_blank" rel="noopener">1832 W Sumac Ln, Apt 5</a></td><td>1BR/1BA</td><td class="right">700</td>
               <td class="right">$1,800</td><td class="right">$2.57</td><td>1960s</td></tr>
           <tr><td><a class="rent-link" href="https://www.apartments.com/1828-w-sumac-ln-anaheim-ca/e2eby4n/" target="_blank" rel="noopener">1828 W Sumac Ln, Unit 1</a></td><td>1BR/1BA</td><td class="right">700</td>
@@ -1505,11 +1522,17 @@
     </div>
 
     <div class="office-block">
-      <div class="tagline">The LAAA Team · Marcus &amp; Millichap</div>
-      <div>16830 Ventura Boulevard, Suite 100, Encino, CA 91436 · (818) 212-2700</div>
-      <div class="small" style="margin-top: 8px;">
-        <a href="https://www.marcusmillichap.com/laaa-team" style="color: var(--gold-light);">marcusmillichap.com/laaa-team</a>
-        · 455+ closed transactions · $1.45B+ in sales volume since 2013
+      <div class="brand-line">The <span class="gold">LAAA</span> Team · Marcus &amp; Millichap</div>
+      <div class="address-line">
+        16830 Ventura Boulevard, Suite 100 · Encino, CA 91436 · (818) 212-2700
+      </div>
+      <div class="stats-line">
+        <span class="stat-item"><strong>455+</strong> Closed Transactions</span>
+        <span class="stat-item"><strong>$1.45B+</strong> in Sales Volume</span>
+        <span class="stat-item"><strong>Since 2013</strong></span>
+      </div>
+      <div class="web-link">
+        <a href="https://www.marcusmillichap.com/laaa-team" target="_blank" rel="noopener">marcusmillichap.com/laaa-team</a>
       </div>
     </div>
   </div>
